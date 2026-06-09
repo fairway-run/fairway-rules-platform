@@ -1,0 +1,25 @@
+name: platform-foundation
+description: Generic platform engineering profile for agent-driven architecture, implementation, CI/CD, UAT, operations, and release work.
+rule_groups:
+  - platform.core
+  - platform.security
+  - platform.delivery
+  - platform.fairway
+recommended_rules:
+  - platform.contract-first
+  - platform.evidence-before-done
+  - platform.error-envelope-correlation-id
+  - platform.api-first-ops-verification
+  - delivery.deploy-run-required
+  - delivery.frontend-e2e-required
+  - delivery.deterministic-utility-first
+  - fairway.provider-session-checkpoints
+  - fairway.worktree-merge-model
+  - fairway.no-self-review
+  - security.no-query-string-tokens
+  - security.authz-negative-tests
+  - security.supply-chain-evidence
+packet_templates:
+  - templates/review-packet.md
+  - templates/deploy-run.md
+  - templates/security-rule-selection.md

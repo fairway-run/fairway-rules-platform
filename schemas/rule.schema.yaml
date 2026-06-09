@@ -1,0 +1,74 @@
+type: object
+required:
+  - id
+  - title
+  - version
+  - status
+properties:
+  id:
+    type: string
+    description: Stable rule id, e.g. platform.contract-first.
+  title:
+    type: string
+  version:
+    type: string
+  status:
+    type: string
+    enum:
+      - draft
+      - active
+      - deprecated
+  applies_when:
+    type: object
+    properties:
+      source_paths:
+        type: array
+        items:
+          type: string
+      target_paths:
+        type: array
+        items:
+          type: string
+      tags:
+        type: array
+        items:
+          type: string
+      task_kinds:
+        type: array
+        items:
+          type: string
+      profiles:
+        type: array
+        items:
+          type: string
+      risk_levels:
+        type: array
+        items:
+          type: string
+  risk_floor:
+    type: string
+    enum:
+      - low
+      - medium
+      - high
+      - critical
+  required_evidence:
+    type: array
+    items:
+      type: string
+  recommended_commands:
+    type: array
+    items:
+      type: string
+  review_domains:
+    type: array
+    items:
+      type: string
+  stop_conditions:
+    type: array
+    items:
+      type: string
+  related_rules:
+    type: array
+    items:
+      type: string

@@ -1,0 +1,14 @@
+[[rule_sources]]
+name = "fairway-platform"
+source = "github:fairway-run/fairway-rules-platform"
+version = "v0.1.0"
+mode = "advisory"
+
+[[workstream_profiles]]
+name = "platform-foundation"
+rule_groups = [
+  "platform.core",
+  "platform.security",
+  "platform.delivery",
+  "platform.fairway",
+]
