@@ -42,6 +42,20 @@ related_rules:
 Public API, event, SDK, or generated-client behavior must be defined in the
 contract before implementation changes. Code follows the contract.
 
+## When To Apply
+
+Apply this rule when a task changes:
+
+- public HTTP routes;
+- event payloads or subjects;
+- generated SDK/client types;
+- frontend API consumption;
+- request or response shape;
+- route error codes or pagination behavior.
+
+If the implementation changes behavior without changing the contract, record
+evidence that the contract already covered the behavior.
+
 ## Required Evidence
 
 - Contract file or fragment changed first, or explicit evidence that no contract
@@ -49,6 +63,24 @@ contract before implementation changes. Code follows the contract.
 - Generated artifacts are updated and clean.
 - Focused tests prove the new behavior.
 - Review notes identify affected clients or consumers.
+
+## Recommended Checks
+
+- Run the project contract validation gate.
+- Regenerate clients and enforce a clean generated tree.
+- Run focused backend and frontend tests for the touched contract.
+
+## Review Questions
+
+- Did the contract change precede implementation?
+- Are generated artifacts committed with the contract change?
+- Does the frontend or SDK consume the new shape safely?
+- Are backward compatibility or migration concerns documented?
+
+## If Blocked
+
+Stop implementation when contract ownership is unclear. Create or route an
+architecture task to decide the contract first.
 
 ## Anti-Patterns
 

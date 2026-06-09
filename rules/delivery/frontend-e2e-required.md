@@ -35,12 +35,41 @@ User-visible UX, navigation, role/persona flows, route guards, auth redirects,
 browser-connect flows, and frontend API consumption changes must be validated
 with the matching frontend e2e gate before completion.
 
+## When To Apply
+
+Apply this rule when a task changes:
+
+- navigation, shell, route guards, or redirects;
+- account/security, login, or session surfaces;
+- browser-connect or app-open flows;
+- frontend API calls or generated clients;
+- visible error, loading, empty, or blocked states.
+
 ## Required Evidence
 
 - Type/unit validation.
 - Full or focused e2e command and result.
 - Rationale when the e2e matrix is narrowed.
 - Artifact or log path.
+
+## Recommended Checks
+
+- Run the project frontend verification command.
+- Run the full frontend e2e gate unless a focused spec fully covers the changed
+  journey.
+- Record why a focused run was sufficient.
+
+## Review Questions
+
+- Which user journey changed?
+- Which e2e spec covers it?
+- Did route guard/auth/session behavior change?
+- Are generated API clients current?
+
+## If Blocked
+
+If e2e cannot run because the harness is wrong or flaky, create a harness-fix
+task. Do not mark the product change done without explicit blocked evidence.
 
 ## Anti-Patterns
 

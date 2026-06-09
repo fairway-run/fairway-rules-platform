@@ -34,12 +34,42 @@ stop_conditions:
 Release and deploy artifacts should have traceable identity: source SHA, digest,
 SBOM, provenance, and signature or attestation policy.
 
+## When To Apply
+
+Apply this rule when a task changes:
+
+- release packaging;
+- image build or publish;
+- registry promotion;
+- CI signing/attestation;
+- deployment by image tag or digest;
+- Homebrew/package distribution.
+
 ## Required Evidence
 
 - Artifact digest.
 - SBOM or package inventory.
 - Provenance or build evidence.
 - Signature/attestation evidence or approved exception.
+
+## Recommended Checks
+
+- Verify artifact identity is tied to source SHA.
+- Prefer immutable digests over mutable tags.
+- Verify signing material is only available to protected release paths.
+- Preserve evidence with the release packet.
+
+## Review Questions
+
+- Which artifact is being trusted?
+- Which source produced it?
+- Is the signature production-acceptable or only local smoke evidence?
+- Can downstream deploy verify the same digest?
+
+## If Blocked
+
+Block production-style release or promotion until evidence exists or an
+approved, expiring exception is recorded.
 
 ## Anti-Patterns
 

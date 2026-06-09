@@ -30,12 +30,34 @@ Operational checks should be repeatable through APIs, read models, or
 deterministic utilities. Direct database inspection is acceptable for discovery,
 but repeated use is evidence of a missing operator surface.
 
+## When To Apply
+
+Apply this rule when a task uses shell, SQL, Kubernetes exec, provider console,
+or log scraping to answer an operational question more than once.
+
 ## Required Evidence
 
 - API, read model, or utility used for the verification.
 - If direct DB inspection was needed, record why and create a follow-up task for
   the missing surface.
 - Output is captured as structured evidence when possible.
+
+## Recommended Checks
+
+- Prefer admin/status APIs and read models.
+- If using direct DB inspection, classify it as discovery or emergency use.
+- Create a follow-up for a missing operator surface when the same query recurs.
+
+## Review Questions
+
+- Could another operator safely repeat this without private context?
+- Is the command read-only and scoped?
+- Should this become an API, read model, or deterministic utility?
+
+## If Blocked
+
+If no safe operator surface exists, keep the immediate debug evidence, then
+create a task for the missing surface before closing the original work.
 
 ## Anti-Patterns
 

@@ -32,11 +32,38 @@ classification that a utility can perform. Utilities should own pass/fail,
 structured output, and evidence packet generation. LLMs may summarize but not
 decide.
 
+## When To Apply
+
+Apply this rule when work repeatedly does any of the following:
+
+- polls CI, deploy, rollout, or UAT state;
+- parses logs into a pass/fail decision;
+- creates similar evidence packets;
+- classifies repeated findings;
+- runs the same smoke or diagnostic command sequence.
+
 ## Required Evidence
 
 - Utility command and output.
 - Structured JSON or stable markdown evidence.
 - Clear classification and follow-up recommendation when blocked.
+
+## Recommended Checks
+
+- Identify whether an existing utility already covers the loop.
+- Prefer JSON output with stable finding classes.
+- Use local LLM summarization only after deterministic classification.
+
+## Review Questions
+
+- What part of this work is deterministic?
+- Can the result be reproduced without the original agent session?
+- Did the utility produce evidence suitable for Fairway?
+
+## If Blocked
+
+If no utility exists and the work is recurring, create a utility task before
+continuing to rely on agent polling.
 
 ## Anti-Patterns
 

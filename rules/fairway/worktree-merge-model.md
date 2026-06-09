@@ -30,12 +30,36 @@ Scratch implementation can happen in lane worktrees. Remote branch sprawl should
 not be the default. A reviewer or orchestrator path should merge verified lane
 work into the configured main branch and push coherent batches.
 
+## When To Apply
+
+Apply this rule when multiple implementation lanes, worktrees, or branches are
+active, or when a task may push to a remote branch.
+
 ## Required Evidence
 
 - Worktree/branch closeout result.
 - Merge, cherry-pick, or preservation decision.
 - Push intent for any remote branch.
 - CI/deploy/UAT evidence for the integrated SHA when applicable.
+
+## Recommended Checks
+
+- Keep implementation branches local unless remote push intent is recorded.
+- Merge or cherry-pick reviewed lane work into the configured main branch.
+- Run CI on integrated mainline batches when possible.
+- Use closeout utilities before deleting branches or worktrees.
+
+## Review Questions
+
+- Is the remote branch necessary?
+- Is there push intent?
+- Has the implementation lane been reviewed or merged through the orchestrator?
+- Are old branches/worktrees safe to clean?
+
+## If Blocked
+
+Preserve the branch or worktree and record why. Do not delete or overwrite
+unmerged or dirty work.
 
 ## Anti-Patterns
 

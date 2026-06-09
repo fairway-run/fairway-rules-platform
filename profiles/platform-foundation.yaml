@@ -23,3 +23,5 @@ packet_templates:
   - templates/review-packet.md
   - templates/deploy-run.md
   - templates/security-rule-selection.md
+  - templates/task-classification.md
+  - templates/finding.md

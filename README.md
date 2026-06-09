@@ -48,6 +48,7 @@ record task state, approve reviews, or mutate repositories.
 ## Layout
 
 ```text
+docs/       Adoption, authoring, and rule index
 rules/
   core/       General engineering invariants
   security/   Cross-project security operating rules
@@ -58,6 +59,12 @@ profiles/    Example profile bindings
 examples/    Example Fairway configuration fragments
 schemas/     Draft rule metadata schema
 ```
+
+Start here:
+
+- [Rule index](docs/rule-index.md)
+- [Adoption guide](docs/adoption.md)
+- [Rule authoring guide](docs/rule-authoring.md)
 
 ## Rule Metadata
 
@@ -100,6 +107,14 @@ mode = "advisory"
 
 After a project has stable evidence and review packets, selected rules can move
 to blocking mode in that project's Fairway config.
+
+Recommended rollout:
+
+1. Use advisory mode for all rules.
+2. Record rule-selection evidence on high-risk tasks.
+3. Promote a small subset to blocking mode.
+4. Move project-specific behavior into the project rule pack.
+5. Keep this repository focused on reusable cross-project practice.
 
 ## Ownership
 

@@ -31,12 +31,40 @@ stop_conditions:
 CI, deploy, smoke, UAT, and release attempts are operating events. They need a
 durable record linking source SHA, environment, result, evidence, and findings.
 
+## When To Apply
+
+Apply this rule when a task:
+
+- pushes a SHA that triggers meaningful CI;
+- deploys to any shared environment;
+- runs smoke, UAT, release verification, or rollback proof;
+- records production-readiness evidence.
+
 ## Required Evidence
 
 - Source SHA or artifact digest.
 - Target environment.
 - CI/deploy/UAT result and evidence path.
 - Actionable findings classified into scoped follow-up tasks.
+
+## Recommended Checks
+
+- Record the pipeline or deploy URL.
+- Record expected completion window before waiting.
+- Use a deterministic monitor utility where available.
+- Classify findings as CI, CD, UAT, ops, harness, docs, or security work.
+
+## Review Questions
+
+- Is the tested SHA clear?
+- Is the target environment clear?
+- Are failures linked to scoped follow-up tasks?
+- Is the deploy-run closed, blocked, or intentionally left active?
+
+## If Blocked
+
+Keep the deploy-run open or blocked. Do not bury unresolved deploy or UAT
+findings inside a successful implementation task.
 
 ## Anti-Patterns
 
