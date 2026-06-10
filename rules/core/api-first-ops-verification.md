@@ -1,7 +1,6 @@
 ---
 id: platform.api-first-ops-verification
 title: Repeated ops verification should use APIs or explicit read models
-version: 0.1.0
 status: draft
 applies_when:
   tags:

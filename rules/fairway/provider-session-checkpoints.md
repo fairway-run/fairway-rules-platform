@@ -1,7 +1,6 @@
 ---
 id: fairway.provider-session-checkpoints
 title: Provider sessions must checkpoint start wait stale failure and completion
-version: 0.1.0
 status: draft
 applies_when:
   tags:

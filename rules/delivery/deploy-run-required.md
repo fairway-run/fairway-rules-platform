@@ -1,7 +1,6 @@
 ---
 id: delivery.deploy-run-required
 title: Meaningful CI deploy UAT or release attempts need deploy-run evidence
-version: 0.1.0
 status: draft
 applies_when:
   tags:

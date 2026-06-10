@@ -1,7 +1,6 @@
 ---
 id: platform.contract-first
 title: Contract changes precede implementation
-version: 0.1.0
 status: draft
 applies_when:
   source_paths:

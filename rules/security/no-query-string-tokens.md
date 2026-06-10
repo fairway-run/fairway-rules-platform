@@ -1,7 +1,6 @@
 ---
 id: security.no-query-string-tokens
 title: Auth material must not be transported in query strings
-version: 0.1.0
 status: draft
 applies_when:
   source_paths:

@@ -14,8 +14,7 @@ Recommended configuration:
 ```toml
 [[rule_sources]]
 name = "fairway-platform"
-source = "github:fairway-run/fairway-rules-platform"
-version = "v0.1.0"
+source = "path:../fairway-rules-platform"
 mode = "advisory"
 ```
 
@@ -70,7 +69,8 @@ Use the following order:
 2. Match Fairway tags.
 3. Match task kind and risk level.
 4. Add domain/project-specific rules from the project rule pack.
-5. Add external guidance, such as CodeGuard, where relevant.
+5. Add converted external guidance, such as a Fairway-native CodeGuard pack,
+   where relevant.
 6. Record non-applicable rationale for high-risk rules that looked relevant but
    were intentionally excluded.
 

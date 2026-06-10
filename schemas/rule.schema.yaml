@@ -2,15 +2,12 @@ type: object
 required:
   - id
   - title
-  - version
   - status
 properties:
   id:
     type: string
     description: Stable rule id, e.g. platform.contract-first.
   title:
-    type: string
-  version:
     type: string
   status:
     type: string
@@ -38,10 +35,6 @@ properties:
         items:
           type: string
       profiles:
-        type: array
-        items:
-          type: string
-      risk_levels:
         type: array
         items:
           type: string

@@ -74,7 +74,6 @@ Each rule is Markdown with a YAML front matter block:
 ---
 id: platform.contract-first
 title: Contract changes precede implementation
-version: 0.1.0
 status: draft
 applies_when:
   source_paths:
@@ -100,8 +99,7 @@ Use this pack as advisory guidance first:
 ```toml
 [[rule_sources]]
 name = "fairway-platform"
-source = "github:fairway-run/fairway-rules-platform"
-version = "v0.1.0"
+source = "path:../fairway-rules-platform"
 mode = "advisory"
 ```
 

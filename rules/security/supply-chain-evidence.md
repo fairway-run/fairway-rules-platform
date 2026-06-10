@@ -1,7 +1,6 @@
 ---
 id: security.supply-chain-evidence
 title: Release artifacts need supply-chain evidence
-version: 0.1.0
 status: draft
 applies_when:
   tags:

@@ -1,7 +1,6 @@
 ---
 id: security.authz-negative-tests
 title: Authorization-sensitive routes need negative boundary tests
-version: 0.1.0
 status: draft
 applies_when:
   source_paths:

@@ -20,8 +20,12 @@ Dir.glob("rules/**/*.md").sort.each do |path|
     next
   end
   data = YAML.safe_load(parts[1], permitted_classes: [], aliases: false) || {}
-  %w[id title version status].each do |field|
+  %w[id title status].each do |field|
     errors << "#{path}: missing #{field}" if data[field].nil? || data[field].to_s.strip.empty?
+  end
+  errors << "#{path}: per-rule version is not supported; version the pack source instead" if data.key?("version")
+  if data["applies_when"].is_a?(Hash) && data["applies_when"].key?("risk_floor")
+    errors << "#{path}: risk_floor must be top-level, not under applies_when"
   end
 end
 

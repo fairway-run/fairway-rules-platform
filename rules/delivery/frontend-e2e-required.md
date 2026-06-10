@@ -1,7 +1,6 @@
 ---
 id: delivery.frontend-e2e-required
 title: User-visible frontend changes require matching e2e validation
-version: 0.1.0
 status: draft
 applies_when:
   source_paths:

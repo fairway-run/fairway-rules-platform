@@ -1,7 +1,6 @@
 ---
 id: fairway.worktree-merge-model
 title: Work happens in lanes and is merged through a reviewer or orchestrator path
-version: 0.1.0
 status: draft
 applies_when:
   tags:

@@ -1,7 +1,6 @@
 ---
 id: fairway.no-self-review
 title: Review domains require independent review identity
-version: 0.1.0
 status: draft
 applies_when:
   tags:

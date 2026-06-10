@@ -1,7 +1,6 @@
 ---
 id: platform.evidence-before-done
 title: Evidence is required before marking work done
-version: 0.1.0
 status: draft
 applies_when:
   task_kinds:

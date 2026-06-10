@@ -15,8 +15,10 @@ Every rule file must include YAML front matter with:
 
 - `id`
 - `title`
-- `version`
 - `status`
+
+Rules do not carry per-rule versions. Version or pin the rule-pack source as a
+unit.
 
 The body should include:
 

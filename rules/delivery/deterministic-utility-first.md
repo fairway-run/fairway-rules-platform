@@ -1,7 +1,6 @@
 ---
 id: delivery.deterministic-utility-first
 title: Repetitive CI CD QA and UAT work should become deterministic utilities
-version: 0.1.0
 status: draft
 applies_when:
   tags:

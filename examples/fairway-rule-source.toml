@@ -1,7 +1,6 @@
 [[rule_sources]]
 name = "fairway-platform"
-source = "github:fairway-run/fairway-rules-platform"
-version = "v0.1.0"
+source = "path:../fairway-rules-platform"
 mode = "advisory"
 
 [[workstream_profiles]]

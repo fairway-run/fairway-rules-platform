@@ -1,7 +1,6 @@
 ---
 id: platform.error-envelope-correlation-id
 title: User-facing errors carry safe messages and correlation IDs
-version: 0.1.0
 status: draft
 applies_when:
   source_paths:
